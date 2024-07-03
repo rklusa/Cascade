@@ -5,32 +5,22 @@ using RestSharp;
 
 namespace Cascade.Server
 {
-    public class RiverApiService
+    public static class RiverApiService
     {
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
-        private string key;
-        private string station;
-        private string startDate;
-        private string EndDate;
-        private string type;
+        private static string key = ApiKeys.key1;
+        private static string station = "02FE015";
+        private static string startDate = "2024-06-30";
+        private static string EndDate = "2024-07-02";
+        private static string type = "history";
 
-        public static List<RiverData> finalData;
-        public RiverApiService()
-        {
-            key = ApiKeys.key1;
-            station = "02FE015";
-            startDate = "2024-06-30";
-            EndDate= "2024-07-02";
-            type = "history";
+        public static List<RiverData> finalData = new List<RiverData>();
 
-            finalData = new List<RiverData>();
-        }
-
-        public void FetchRiverData()
+        public static void FetchRiverData()
         {
             var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
-            var request = new RestRequest($"/station/{this.station}/primarylevel/?startDate={this.startDate}&endDate={this.EndDate}&resultType={this.type}&key={this.key}");
+            var request = new RestRequest($"/station/{station}/primarylevel/?startDate={startDate}&endDate={EndDate}&resultType={type}&key={key}");
             var response = client.ExecuteAsync(request);
 
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
@@ -45,7 +35,7 @@ namespace Cascade.Server
             }
         }
 
-        public List<RiverData> FilterDates(List<RiverData> data)
+        public static List<RiverData> FilterDates(List<RiverData> data)
         {
             List<RiverData> cleanList = new List<RiverData>();
             int i = 0;

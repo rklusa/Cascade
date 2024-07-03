@@ -21,6 +21,9 @@ namespace Cascade.Server.Controllers
         [HttpGet(Name = "GetRiverData")]
         public IEnumerable<RiverData> Get()
         {
+
+            RiverApiService.FetchRiverData();
+
             foreach (var data in RiverApiService.finalData)
             {
                 _data.Add(data);
