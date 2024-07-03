@@ -18,8 +18,8 @@ namespace Cascade.Server
         public static List<RiverData> finalData;
         public RiverApiService()
         {
-            key = "-O0ob3w88ZUm6O-tUQK2";
-            station = "02FF007";
+            key = ApiKeys.key1;
+            station = "02FE015";
             startDate = "2024-06-30";
             EndDate= "2024-07-02";
             type = "history";
@@ -57,16 +57,7 @@ namespace Cascade.Server
                 
                 if (Convert.ToInt32(min) == 0)// only grab 1 entry for each day
                 {
-                    if (i == 0) // to get every other day from the json string
-                    {
-                        cleanList.Add(obj);
-                        i = 1;
-                    }
-                    else
-                    {
-                        i = 0;
-                    }
-                    
+                    cleanList.Add(obj);
                 }
             }
 

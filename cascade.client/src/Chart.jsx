@@ -19,14 +19,14 @@ export default function Chart({_data}) {
         <LineChart width={1000} height={600} data={_data} >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" padding={{ left: 30, right: 30 }} />
-            <YAxis />
+            <YAxis type="number" domain={['dataMin - 0.2', 'dataMax + 0.2']} />
             <Tooltip />
             <Legend />
             <Line
                 type="monotone"
                 dataKey="value"
                 stroke="#8884d8"
-                activeDot={{ r: 8 }}
+                activeDot={{ r: 2 }}
             />
             
         </LineChart>
