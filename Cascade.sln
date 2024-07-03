@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.Server", "Cascade.Server\Cascade.Server.csproj", "{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cascade.client", "cascade.client\cascade.client.esproj", "{433075F0-948F-43B1-9CF4-4B9A77AD7424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433075F0-948F-43B1-9CF4-4B9A77AD7424}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA358BB0-90D3-473B-B563-A581E8E64D4A}
+	EndGlobalSection
+EndGlobal

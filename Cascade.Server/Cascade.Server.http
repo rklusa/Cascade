@@ -1,0 +1,6 @@
+@Cascade.Server_HostAddress = http://localhost:5014
+
+GET {{Cascade.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
