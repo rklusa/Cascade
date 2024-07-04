@@ -10,14 +10,14 @@ namespace Cascade.Server
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
         private static string key = ApiKeys.key1;
-        private static string station = "02FE015";
+        //public static string station = "02FE015";
         private static string startDate = "2024-06-30";
         private static string EndDate = "2024-07-02";
         private static string type = "history";
 
         public static List<RiverData> finalData = new List<RiverData>();
 
-        public static void FetchRiverData()
+        public static void FetchRiverData(string station)
         {
             var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
             var request = new RestRequest($"/station/{station}/primarylevel/?startDate={startDate}&endDate={EndDate}&resultType={type}&key={key}");

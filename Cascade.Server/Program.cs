@@ -9,9 +9,6 @@ namespace Cascade.Server
     {
         public static void Main(string[] args)
         {
-            //RiverApiService service = new RiverApiService();
-            //service.FetchRiverData();
-
             var builder = WebApplication.CreateBuilder(args);
 
                 // Add services to the container.

@@ -5,21 +5,33 @@ import Chart from './Chart';
 
 function App() {
     const [data, setData] = useState();
+    const [stationId, setStationId] = useState();
+
+ 
 
     useEffect(() => {
-        populateRiverData();
+        //populateRiverData(stationId);
     }, []);
 
     return (
         <div>
+        <label>Enter station Id: </label>
+            <input type="text" value={stationId} onChange={e => setStationId(e.target.value)} />
+            <button onClick={refreshStation(stationId)}> Click Me!</button>
             <Chart _data={data} />
         </div>
     );
 
-    async function populateRiverData() {
-        const response = await fetch('riverdata');
-        const data = await response.json();
-        setData(data);
+
+    function refreshStation(station) {
+        console.log(station)
+        populateRiverData(station)
+    }
+    async function populateRiverData(station) {
+        
+            const response = await fetch(`riverdata?station=${station}`);
+            const data = await response.json();
+            setData(data);
     }
 }
 
