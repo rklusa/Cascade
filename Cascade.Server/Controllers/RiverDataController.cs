@@ -9,7 +9,6 @@ namespace Cascade.Server.Controllers
     [Route("[controller]")]
     public class RiverDataController : ControllerBase
     {
-
         private readonly ILogger<RiverDataController> _logger;
 
         public RiverDataController(ILogger<RiverDataController> logger)
@@ -17,20 +16,22 @@ namespace Cascade.Server.Controllers
             _logger = logger;
         }
 
-        [HttpPost(Name = "PostStationNum")]
-        public void PostStation(string station)
-        {
-            
-        }
-
         [HttpGet(Name = "GetRiverData")]
-        public IEnumerable<RiverData> Get(string station)
+        public IEnumerable<RiverData> GetRiverData(string station)
         {
             //RiverApiService.station = station;
             RiverApiService.FetchRiverData(station);
 
             return RiverApiService.finalData.ToArray();
         }
+
+        //[HttpGet(Name = "GetStationName")]
+        //public ActionResult GetStationName(string station)
+        //{
+            //string name = RiverApiService.FetchRiverInfo(station);
+
+            //return Content(name);
+        //}
 
     }
 }

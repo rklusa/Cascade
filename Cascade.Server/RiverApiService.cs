@@ -17,6 +17,21 @@ namespace Cascade.Server
 
         public static List<RiverData> finalData = new List<RiverData>();
 
+        public static string FetchRiverInfo(string station)
+        {
+            var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
+            var request = new RestRequest($"/station/{station}?key={key}");
+            var response = client.ExecuteAsync(request);
+            string stationName = " ";
+
+            if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string rawResponse = response.Result.Content;
+                stationName = (string)JObject.Parse(rawResponse)["name"];
+            }
+
+            return stationName;
+        }
         public static void FetchRiverData(string station)
         {
             var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
