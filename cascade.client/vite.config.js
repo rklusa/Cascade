@@ -47,8 +47,14 @@ export default defineConfig({
                 target,
                 secure: false
             },
-            '^/riverdata': {
+            '^/GetRiverData': {
                 target: 'https://localhost:7092',
+                changeOrigin: true,
+                secure: false
+            },
+            '^/GetStationName': {
+                target: 'https://localhost:7092',
+                changeOrigin: true,
                 secure: false
             }
         },

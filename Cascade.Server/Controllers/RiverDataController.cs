@@ -6,7 +6,7 @@ using Cascade.Server;
 namespace Cascade.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")]
     public class RiverDataController : ControllerBase
     {
         private readonly ILogger<RiverDataController> _logger;
@@ -16,7 +16,8 @@ namespace Cascade.Server.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetRiverData")]
+        [HttpGet()]
+        [Route("GetRiverData")]
         public IEnumerable<RiverData> GetRiverData(string station)
         {
             //RiverApiService.station = station;
@@ -25,13 +26,14 @@ namespace Cascade.Server.Controllers
             return RiverApiService.finalData.ToArray();
         }
 
-        //[HttpGet(Name = "GetStationName")]
-        //public ActionResult GetStationName(string station)
-        //{
-            //string name = RiverApiService.FetchRiverInfo(station);
+        [HttpGet()]
+        [Route("GetStationName")]
 
-            //return Content(name);
-        //}
-
+        public ActionResult<string> GetStationName(string station)
+        {
+            string name = RiverApiService.FetchRiverInfo(station);
+            
+            return name;
+        }
     }
 }

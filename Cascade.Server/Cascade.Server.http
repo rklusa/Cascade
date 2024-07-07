@@ -3,5 +3,12 @@
 GET {{Cascade.Server_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{Cascade.Server_HostAddress}}/riverdata/
+Accept: application/json
+
+GET {{Cascade.Server_HostAddress}}/stationname/
+Accept: application/json
+
+
 
 ###

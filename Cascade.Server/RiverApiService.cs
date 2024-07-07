@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Diagnostics;
 
 namespace Cascade.Server
 {
@@ -9,28 +10,35 @@ namespace Cascade.Server
     {
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
-        private static string key = ApiKeys.key1;
+        private static string key = ApiKeys.key2;
         //public static string station = "02FE015";
         private static string startDate = "2024-06-30";
         private static string EndDate = "2024-07-02";
         private static string type = "history";
 
         public static List<RiverData> finalData = new List<RiverData>();
+        public static string stationName = string.Empty;
 
         public static string FetchRiverInfo(string station)
         {
             var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
             var request = new RestRequest($"/station/{station}?key={key}");
             var response = client.ExecuteAsync(request);
-            string stationName = " ";
+            
+            string cleanName = string.Empty;
 
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 string rawResponse = response.Result.Content;
-                stationName = (string)JObject.Parse(rawResponse)["name"];
+
+                dynamic x = JObject.Parse(rawResponse);
+                string stationName = x["message"]["name"];
+
+                cleanName = string.Join(" ", stationName.Split().SkipWhile(word => word != word.ToUpper()).TakeWhile(word => word == word.ToUpper()));
+
             }
 
-            return stationName;
+            return cleanName;
         }
         public static void FetchRiverData(string station)
         {
