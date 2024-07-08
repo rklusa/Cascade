@@ -20,7 +20,6 @@ namespace Cascade.Server.Controllers
         [Route("GetRiverData")]
         public IEnumerable<RiverData> GetRiverData(string station)
         {
-            //RiverApiService.station = station;
             RiverApiService.FetchRiverData(station);
 
             return RiverApiService.finalData.ToArray();
@@ -28,7 +27,6 @@ namespace Cascade.Server.Controllers
 
         [HttpGet()]
         [Route("GetStationName")]
-
         public ActionResult<string> GetStationName(string station)
         {
             string name = RiverApiService.FetchRiverInfo(station);
