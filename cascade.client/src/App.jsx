@@ -39,7 +39,9 @@ function App() {
 
         const response = await fetch(`GetStationName?station=${station}`);
         const stationName = await response.text();
+
         setStationName(stationName);
+
     }
 }
 
