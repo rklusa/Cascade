@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Chart from './Chart';
+import LoadingSpinner from './Loading';
 
 
 function App() {
     const [data, setData] = useState();
     const [stationName, setStationName] = useState();
+    const [loading, setLoading] = useState();
 
     const stationId = "02FE015";
 
@@ -17,7 +19,7 @@ function App() {
     return (
         <div>
             <text> {stationName} </text>
-            <Chart _data={data} />
+            {loading ? <LoadingSpinner /> : <Chart _data={data} />}
         </div>
     );
     //<label id="riverNameLabel"> River Name.</label>
@@ -25,10 +27,12 @@ function App() {
     //<button onClick={refreshStation(stationId)}> Refresh</button>
 
     async function populateRiverData(station) {
-        
-        const response = await fetch(`GetRiverData?station=${station}`);
-            const data = await response.json();
-            setData(data);
+
+        setLoading(true);
+        const response = await fetch(`GetRiverData?station=${station}`)
+        const data = await response.json();
+        setData(data);
+        setLoading(false);
     }
 
     async function GetStationDetails(station) {
