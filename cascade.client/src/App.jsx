@@ -5,48 +5,37 @@ import Chart from './Chart';
 
 function App() {
     const [data, setData] = useState();
-    const [stationId, setStationId] = useState();
+    const [stationName, setStationName] = useState();
+
+    const stationId = "02FE015";
 
     useEffect(() => {
-        //populateRiverData(stationId);
+        populateRiverData(stationId);
+        GetStationDetails(stationId);
     }, []);
 
     return (
         <div>
-            <label id="riverNameLabel"> River Name.</label>
-            <label>Enter station Id: </label>
-            <input type="text" value={stationId} onChange={e => setStationId(e.target.value)} />
-            <button onClick={refreshStation(stationId)}> Refresh</button>
+            <text> {stationName} </text>
             <Chart _data={data} />
-            
         </div>
     );
-    //
+    //<label id="riverNameLabel"> River Name.</label>
+    //<input type="text" value={stationId} onChange={e => setStationId(e.target.value)} />
+    //<button onClick={refreshStation(stationId)}> Refresh</button>
 
-    function refreshStation(station) {
-        populateRiverData(station)
-        GetStationDetails(station)
-    }
     async function populateRiverData(station) {
         
         const response = await fetch(`GetRiverData?station=${station}`);
-            const data = await response.text();
+            const data = await response.json();
             setData(data);
     }
 
     async function GetStationDetails(station) {
 
         const response = await fetch(`GetStationName?station=${station}`);
-        const data = await response.text();
-        SetStationDetails(data);
-
-        
-        //console.log(stationName);
-    }
-
-    function SetStationDetails(stationName) {
-        let labelElement = document.getElementById("riverNameLabel");
-        labelElement.innerText = `River Name: ${stationName}`;
+        const stationName = await response.text();
+        setStationName(stationName);
     }
 }
 
