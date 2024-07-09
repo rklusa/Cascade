@@ -10,7 +10,8 @@ namespace Cascade.Server
     {
         //private static string startDate = DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd");
         //private static string endDate = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
-
+        
+        // notawasaga river at edenvale 02ED027
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
         private static string key = ApiKeys.key1;

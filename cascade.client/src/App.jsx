@@ -2,14 +2,19 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Chart from './Chart';
 import LoadingSpinner from './Loading';
+import RiverDataComp from './RiverDataComponent';
 
 
 function App() {
     const [data, setData] = useState();
     const [stationName, setStationName] = useState();
     const [loading, setLoading] = useState();
+    const [chartList, setChartList] = useState([]);
+ 
 
-    const stationId = "02FE015";
+    //const stations = ["02ED027","02FE015"];// this is to be filled from the users profile?
+    const stationId = "02ED027";
+
 
     useEffect(() => {
         populateRiverData(stationId);
@@ -22,9 +27,8 @@ function App() {
             {loading ? <LoadingSpinner /> : <Chart _data={data} />}
         </div>
     );
-    //<label id="riverNameLabel"> River Name.</label>
-    //<input type="text" value={stationId} onChange={e => setStationId(e.target.value)} />
-    //<button onClick={refreshStation(stationId)}> Refresh</button>
+    //<text> {stationName} </text>
+    //{loading ? <LoadingSpinner /> : <Chart _data={data} />}
 
     async function populateRiverData(station) {
 

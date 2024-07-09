@@ -16,7 +16,7 @@ import {
 
 export default function Chart({_data}) {
     return (
-        <LineChart width={1000} height={600} data={_data} >
+        <LineChart width={500} height={300} data={_data} >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" padding={{ left: 30, right: 30 }} />
             <YAxis type="number" domain={['dataMin - 0.2', 'dataMax + 0.2']} />
