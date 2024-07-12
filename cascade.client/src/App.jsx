@@ -9,20 +9,25 @@ function App() {
     const [data, setData] = useState();
     const [stationName, setStationName] = useState();
     const [loading, setLoading] = useState();
-    const [chartList, setChartList] = useState([]);
+    const [stationId, setStationId] = useState();
  
 
     //const stations = ["02ED027","02FE015"];// this is to be filled from the users profile?
-    const stationId = "02ED027";
+    //const stationId = "02ED027";
 
 
     useEffect(() => {
+        if (stationId === null || stationId === "") {
+            return;
+        }
+        console.log("making api calls");
         populateRiverData(stationId);
         GetStationDetails(stationId);
-    }, []);
+    }, [stationId]);
 
     return (
         <div>
+            <input value={stationId} onChange={e => setStationId(e.target.value)} /> <br/>
             <text> {stationName} </text>
             {loading ? <LoadingSpinner /> : <Chart _data={data} />}
         </div>
