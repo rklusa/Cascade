@@ -10,9 +10,8 @@ function App() {
     const [stationName, setStationName] = useState();
     const [loading, setLoading] = useState();
     const [stationId, setStationId] = useState();
+    const [tempId, setTempId] = useState();
  
-
-    //const stations = ["02ED027","02FE015"];// this is to be filled from the users profile?
     //const stationId = "02ED027";
 
 
@@ -27,13 +26,16 @@ function App() {
 
     return (
         <div>
-            <input value={stationId} onChange={e => setStationId(e.target.value)} /> <br/>
+            <input value={tempId} onChange={e => setTempId(e.target.value)} />
+            <button onClick={HandleClick}> fetch</button> <br/>
             <text> {stationName} </text>
             {loading ? <LoadingSpinner /> : <Chart _data={data} />}
         </div>
     );
-    //<text> {stationName} </text>
-    //{loading ? <LoadingSpinner /> : <Chart _data={data} />}
+
+    function HandleClick() {
+        setStationId(tempId);
+    }
 
     async function populateRiverData(station) {
 
