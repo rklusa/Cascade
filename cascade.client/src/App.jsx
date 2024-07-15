@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Chart from './Chart';
-import LoadingSpinner from './Loading';
 import RiverDataComp from './RiverDataComponent';
 
 
@@ -11,9 +9,9 @@ function App() {
     const [loading, setLoading] = useState();
     const [stationId, setStationId] = useState();
     const [tempId, setTempId] = useState();
+    const [charts, setCharts] = useState([]);
  
     //const stationId = "02ED027";
-
 
     useEffect(() => {
         if (stationId === null || stationId === "") {
@@ -27,15 +25,17 @@ function App() {
     return (
         <div>
             <input value={tempId} onChange={e => setTempId(e.target.value)} />
-            <button onClick={HandleClick}> fetch</button> <br/>
-            <text> {stationName} </text>
-            {loading ? <LoadingSpinner /> : <Chart _data={data} />}
+            <button onClick={HandleClick}> Set Station</button> <br />
+            {charts}
         </div>
+
     );
 
     function HandleClick() {
         setStationId(tempId);
+        setCharts([...charts, <RiverDataComp _data={data} _stationName={stationName} _loading={loading} />])
     }
+
 
     async function populateRiverData(station) {
 
