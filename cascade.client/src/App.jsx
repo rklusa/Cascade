@@ -1,27 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import RiverDataComp from './RiverDataComponent';
 
 
 function App() {
-
     const [stationId, setStationId] = useState();
-    const [tempId, setTempId] = useState();
     const [charts, setCharts] = useState([]);
  
     //const stationId = "02ED027";
+    const stations = ["02ED027", "02FF007", "02FE015"];
 
     return (
         <div>
             <input value={stationId} onChange={e => setStationId(e.target.value)} />
             <button onClick={AddChart}> Add Chart</button> <br />
-            {charts}
+            {charts.map(chart => (<RiverDataComp key={chart.id} _chart={chart} _stationId={stationId} _DeleteChart={DeleteChart} />))}
         </div>
 
     );
 
     function AddChart() {
-        setCharts([...charts, <RiverDataComp _stationId={stationId} />])
+        const newChart = {id: Date.now(), _stationId: stationId}
+        setCharts([...charts, newChart]);
+    }
+
+    function DeleteChart(id) {
+        setCharts(charts.filter(chart => chart.id !== id));
     }
 }
 

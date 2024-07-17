@@ -2,7 +2,7 @@ import Chart from './Chart';
 import LoadingSpinner from './Loading';
 import { useEffect, useState } from 'react';
 
-function RiverDataComp({ _stationId, _stationName, _loading }) {
+function RiverDataComp({_chart, _stationId, _DeleteChart }) {
     const [loading, setLoading] = useState();
     const [data, setData] = useState();
     const [stationName, setStationName] = useState();
@@ -19,6 +19,7 @@ function RiverDataComp({ _stationId, _stationName, _loading }) {
     return (
         <div>
             <text> {stationName} </text>
+            <button onClick={() => _DeleteChart(_chart.id)} > X </button>
             {loading ? <LoadingSpinner /> : <Chart _data={data} />}
         </div>
     );
