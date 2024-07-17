@@ -25,12 +25,6 @@ function RiverDataComp({ _stationId, _stationName, _loading }) {
 
     async function populateRiverData(station) {
 
-        //setLoading(true);
-        //const response = await fetch(`GetRiverData?station=${station}`)
-        //const data = await response.json();
-        //setData(data);
-        //setLoading(false);
-
         setLoading(true);
 
         try {
@@ -40,9 +34,16 @@ function RiverDataComp({ _stationId, _stationName, _loading }) {
                 throw new Error(response.statusText);
             }
             const data = await response.json();
-            setData(data);
-        } catch (err) {
-            console.log(err);
+
+            if (data.length == 0) {
+                console.log("invalid station id");
+            }
+            else {
+                setData(data);
+            }
+
+        } catch (e) {
+            console.log(e);
         }
 
         setLoading(false);
@@ -51,10 +52,27 @@ function RiverDataComp({ _stationId, _stationName, _loading }) {
 
     async function GetStationDetails(station) {
 
-        const response = await fetch(`GetStationName?station=${station}`);
-        const stationName = await response.text();
+        try {
+            const response = await fetch(`GetStationName?station=${station}`);
 
-        setStationName(stationName);
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+
+            const stationName = await response.text();
+            let name = "";
+
+            if (stationName == "") {
+                name = "Invalid Station Name";
+            } else {
+                name = stationName;
+            }
+
+            setStationName(name);
+
+        } catch (e) {
+            console.log(e);
+        }
 
     }
 }
