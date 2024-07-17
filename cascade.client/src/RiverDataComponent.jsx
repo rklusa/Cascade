@@ -19,8 +19,8 @@ function RiverDataComp({_chart, _stationId, _DeleteChart }) {
     return (
         <div>
             <text> {stationName} </text>
-            <button onClick={() => _DeleteChart(_chart.id)} > X </button>
-            {loading ? <LoadingSpinner /> : <Chart _data={data} />}
+            {loading ? <LoadingSpinner /> : <button onClick={() => _DeleteChart(_chart.id)} > X </button>}
+            < Chart _data={data} />
         </div>
     );
 
