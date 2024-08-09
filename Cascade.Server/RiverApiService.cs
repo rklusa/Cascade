@@ -14,7 +14,7 @@ namespace Cascade.Server
         // notawasaga river at edenvale 02ED027
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
-        private static string key = ApiKeys.key1;
+        private static string key = ApiKeys.key2;
         private static string startDate = GetStartDate();
         private static string endDate = GetEndDate();
         private static string type = "history";

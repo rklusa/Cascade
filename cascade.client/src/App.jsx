@@ -8,11 +8,14 @@ function App() {
     const [charts, setCharts] = useState([]);
  
     //const stationId = "02ED027";
-    const stations = ["02ED027", "02FF007", "02FE015"];
+    //const stations = ["02ED027", "02FF007", "02FE015"];
 
     return (
         <div>
-            <input value={stationId} onChange={e => setStationId(e.target.value)} />
+            <label>
+                Station #:
+                <input value={stationId || ""} onChange={e => setStationId(e.target.value)} />
+            </label>
             <button onClick={AddChart}> Add Chart</button> <br />
             {charts.map(chart => (<RiverDataComp key={chart.id} _chart={chart} _stationId={stationId} _DeleteChart={DeleteChart} />))}
         </div>
