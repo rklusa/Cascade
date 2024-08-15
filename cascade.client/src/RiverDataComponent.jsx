@@ -1,10 +1,9 @@
 import Chart from './Chart';
 import LoadingSpinner from './Loading';
 import { useEffect, useState } from 'react';
-import SummariesComponent from './SummariesComponent';
-import SummariesComp from './SummariesComponent';
 
-function RiverDataComp({_chart, _stationId, _DeleteChart }) {
+
+function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
     const [loading, setLoading] = useState();
     const [data, setData] = useState();
     const [stationName, setStationName] = useState();
@@ -21,12 +20,26 @@ function RiverDataComp({_chart, _stationId, _DeleteChart }) {
         setStationId(_stationId);
     }, []);
 
+    useEffect(() => {
+        if (data === undefined || data.length == 0) {
+            return;
+        }
+        else if (stationName === undefined || stationName == "") {
+            return;
+        }
+        else {
+            console.log(`adding summary, ${stationName} ${stationId} ${lastEntry}`);
+            _AddSummary(_chart.id, stationName, stationId, lastEntry);
+        }
+        
+        
+    }, [data, stationName]);
+
     return (
-        <div>
+        <div className="ChartObj">
             <label> {stationName} </label>
             {loading ? <label></label> : <button onClick={() => _DeleteChart(_chart.id)} > X </button>}
             {loading ? <LoadingSpinner /> : <Chart _data={data} />}
-            <SummariesComp _stationName={stationName} _stationId={stationId} _currentValue={lastEntry} />
         </div>
     );
 

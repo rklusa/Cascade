@@ -1,6 +1,9 @@
-function SummariesComp({_stationName, _stationId, _currentValue }) {
-  return (
-      <p>({_stationId}){_stationName} Level:{_currentValue} m</p>
+
+function SummariesComp({ _sum, _stationName, _stationId, _currentValue }) {
+    return (
+      <div className="SummariesComp">
+            <p className="text">({_stationId}){_stationName} Level:{_currentValue} m</p>
+      </div>
   );
 }
 
