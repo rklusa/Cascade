@@ -16,16 +16,18 @@ function App() {
         <div>
             <nav className="nav">
                 <label>
-                    Station #:
+                    Station #: 
                     <input value={stationId || ""} onChange={e => setStationId(e.target.value)} />
                 </label>
                 <button onClick={AddChart}> Add Chart</button> <br />
             </nav>
             <div className="MainContainer">
                 <div className="ChartContainer">
+                    
                     {charts.map(chart => (<RiverDataComp key={chart.id} _chart={chart} _stationId={stationId} _DeleteChart={DeleteChart} _AddSummary={AddSummary} />))}
                 </div>
                 <div className="SummaryContainer">
+                    <label style={{fontWeight: "bold"}} > Summaries </label>
                     {summaries.map(sum => (<SummariesComp key={sum.id} _sum={sum} _stationName={sum._stationName} _stationId={sum._stationId} _currentValue={sum._currentValue} />))}
                 </div>
             </div>

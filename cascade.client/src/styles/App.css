@@ -8,6 +8,7 @@
     align-items: center;
     background-color: #333;
     color: #EEEEEE;
+    gap: 10px;
 }
 
 .MainContainer {
@@ -22,6 +23,7 @@
     flex-wrap: wrap;
     min-width: 75vw;
     gap: 10px;
+    text-align: center;
 }
 
 .ChartObj {
@@ -44,8 +46,9 @@
     gap: 5px;
     height: min-content;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .SummariesComp {
-    
+    text-align: left;
 }

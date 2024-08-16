@@ -10,6 +10,7 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
     const [lastEntry, setLastEntry] = useState();
     const [stationId, setStationId] = useState();
 
+    // api call hook
     useEffect(() => {
         if (_stationId === null || _stationId === "") {
             return;
@@ -20,6 +21,7 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
         setStationId(_stationId);
     }, []);
 
+    // summary hook
     useEffect(() => {
         if (data === undefined || data.length == 0) {
             return;
