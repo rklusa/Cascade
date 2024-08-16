@@ -64,7 +64,6 @@ namespace Cascade.Server
         public static List<RiverData> FilterDates(List<RiverData> data)
         {
             List<RiverData> cleanList = new List<RiverData>();
-            int i = 0;
 
             foreach (var obj in data)
             {
