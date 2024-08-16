@@ -1,16 +1,4 @@
 ﻿#root {
-    /*
-            max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: sans-serif;
-    text-align: center;
-            min-height: 100vh;
-    min-width: 100vw;
-
-            min-height: 100vh;
-            min-width: 100vw;
-    */
 }
 
 .nav {
@@ -19,6 +7,7 @@
     top: 0;
     align-items: center;
     background-color: #333;
+    color: #EEEEEE;
 }
 
 .MainContainer {
@@ -39,24 +28,24 @@
     text-align: center;
     border: 5px solid #EEEEEE;
     border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.DeleteButton {
+   float: right;
 }
 
 .SummaryContainer {
     display: flex;
     flex-direction: column;
     border: 5px solid #EEEEEE;
+    border-radius: 10px 10px 10px 10px;
     min-width: 25vw;
     gap: 5px;
+    height: min-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .SummariesComp {
     
 }
-
-
-
-
-/*th, td {*/
-    /*padding-left: 1rem;*/
-    /*padding-right: 1rem;*/
-/*}*/

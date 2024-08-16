@@ -18,8 +18,13 @@ export default function Chart({_data}) {
     return (
         <LineChart width={500} height={300} data={_data} >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" padding={{ left: 30, right: 30 }} />
-            <YAxis type="number" domain={['dataMin - 0.2', 'dataMax + 0.2']} />
+            <XAxis dataKey="date" padding={{ left: 10, right: 10 }} />
+            <YAxis type="number" tickFormatter={(value) =>
+                new Intl.NumberFormat("en-US", {
+                    notation: "compact",
+                    compactDisplay: "short",
+                }).format(value)
+            } domain={['dataMin - 0.05', 'dataMax + 0.05']} />
             <Tooltip />
             <Legend />
             <Line
