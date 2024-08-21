@@ -2,12 +2,15 @@ import { useState } from 'react';
 import './styles/App.css';
 import RiverDataComp from './RiverDataComponent';
 import SummariesComp from './SummariesComponent';
+import StationLookupComp from './StationLookupComponentjsx';
 
 
 function App() {
     const [stationId, setStationId] = useState();
+    const [lookupOpen, setLookUpOpen] = useState();
     const [charts, setCharts] = useState([]);
     const [summaries, setSummaries] = useState([]);
+ 
 
     //const stationId = "02ED027";
     //const stations = ["02ED027", "02FF007", "02FE015"];
@@ -16,10 +19,12 @@ function App() {
         <div>
             <nav className="nav">
                 <label>
-                    Station #: 
+                    Station #:
                     <input value={stationId || ""} onChange={e => setStationId(e.target.value)} />
                 </label>
                 <button onClick={AddChart}> Add Chart</button> <br />
+                <button onClick={HandleLookup} > Station Lookup </button>
+                {lookupOpen ? <StationLookupComp /> : null}
             </nav>
             <div className="MainContainer">
                 <div className="ChartContainer">
@@ -35,6 +40,10 @@ function App() {
         </div>
 
     );
+
+    function HandleLookup() {
+        setLookUpOpen(!lookupOpen);
+    }
 
     function AddChart() {
         const checkStationExist = charts.find(obj => obj._stationId == stationId);
