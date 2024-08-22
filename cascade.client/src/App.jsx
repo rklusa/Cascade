@@ -11,7 +11,6 @@ function App() {
     const [charts, setCharts] = useState([]);
     const [summaries, setSummaries] = useState([]);
  
-
     //const stationId = "02ED027";
     //const stations = ["02ED027", "02FF007", "02FE015"];
 
@@ -50,6 +49,7 @@ function App() {
     }
 
     function AddChart() {
+        HandleLookup();
         const checkStationExist = charts.find(obj => obj._stationId == stationId);
         if (!checkStationExist) {
             console.log("this station doesnt already have a chart");

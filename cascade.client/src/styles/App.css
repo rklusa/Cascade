@@ -14,8 +14,6 @@
     z-index: 1;
 }
 
-
-
 .StationLookupDropDown {
     position: absolute;
     min-width: 160px;
@@ -52,6 +50,11 @@
     border: 5px solid #EEEEEE;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.LoadingSpinner {
+    margin: auto;
+    width: 50%;
 }
 
 .DeleteButton {
