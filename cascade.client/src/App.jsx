@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './styles/App.css';
-import RiverDataComp from './RiverDataComponent';
-import SummariesComp from './SummariesComponent';
-import StationLookupComp from './StationLookupComponentjsx';
+import RiverDataComp from './components/RiverDataComponent';
+import SummariesComp from './components/SummariesComponent';
+import StationLookupComp from './components/StationLookupComponentjsx';
 
 
 function App() {

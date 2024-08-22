@@ -14,7 +14,7 @@ import {
 
 
 
-export default function Chart({_data}) {
+function ChartComp({ _data }) {
     return (
         <LineChart width={500} height={300} data={_data} >
             <CartesianGrid strokeDasharray="3 3" />
@@ -30,10 +30,13 @@ export default function Chart({_data}) {
             <Line
                 type="monotone"
                 dataKey="value"
-                stroke="#8884d8"
+                stroke="#2693ff"
                 activeDot={{ r: 2 }}
             />
-            
+
         </LineChart>
     );
 }
+
+export default ChartComp;
+    

@@ -1,4 +1,4 @@
-import Chart from './Chart';
+import ChartComp from './ChartComponent';
 import LoadingSpinner from './Loading';
 import { useEffect, useState } from 'react';
 
@@ -41,7 +41,7 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
         <div className="ChartObj">
             <label> {stationName} </label>
             {loading ? <label></label> : <button className="DeleteButton" onClick={() => _DeleteChart(_chart.id)} > X </button>}
-            {loading ? <div className="LoadingSpinner" ><LoadingSpinner /></div> : <Chart _data={data} />}
+            {loading ? <div className="LoadingSpinner" ><LoadingSpinner /></div> : <ChartComp _data={data} />}
         </div>
     );
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import data from './data/StationsData.json';
+import data from '../data/StationsData.json';
 
 function StationLookupComp({ _SetStationIdFromLookup }) {
     const [searchInput, setSearchInput] = useState("");
