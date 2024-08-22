@@ -28,6 +28,10 @@
     color: black;
 }
 
+.ListItem:hover {
+    color: #2693ff;
+}
+
 .MainContainer {
     display: flex;
     flex-direction: row;

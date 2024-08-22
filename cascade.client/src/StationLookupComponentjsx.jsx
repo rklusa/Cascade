@@ -19,7 +19,7 @@ function StationLookupComp({ _SetStationIdFromLookup }) {
                         } else if (obj.name.toLowerCase().includes(searchInput.toLowerCase())) {
                             return obj;
                         }
-                    }).map((obj) => (<li onClick={() => _SetStationIdFromLookup(obj.id)} key={obj.id}>{obj.name} <b>{obj.id}</b></li>)) }
+                    }).map((obj) => (<li className="ListItem" onClick={() => _SetStationIdFromLookup(obj.id)} key={obj.id}>{obj.name} <b>{obj.id}</b></li>)) }
 
                     
                 </ul>

@@ -18,13 +18,13 @@ function App() {
     return (
         <div>
             <nav className="nav">
+                <button onClick={HandleLookup} > Station Lookup </button>
+                {lookupOpen ? <StationLookupComp _SetStationIdFromLookup={SetStationIdFromLookup} /> : null}
                 <label>
                     Station #:
                     <input value={stationId || ""} onChange={e => setStationId(e.target.value)} />
                 </label>
                 <button onClick={AddChart}> Add Chart</button> <br />
-                <button onClick={HandleLookup} > Station Lookup </button>
-                {lookupOpen ? <StationLookupComp _SetStationIdFromLookup={SetStationIdFromLookup} /> : null}
             </nav>
             <div className="MainContainer">
                 <div className="ChartContainer">
