@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import data from './data/StationsData.json';
 
-function StationLookupComp() {
+function StationLookupComp({ _SetStationIdFromLookup }) {
     const [searchInput, setSearchInput] = useState("");
 
 
@@ -13,13 +13,13 @@ function StationLookupComp() {
             </div>
             <div>
                 <ul>
-                    { data.filter((obj) => {
+                    {data.filter((obj) => {
                         if (searchInput === "") {
                             return;
                         } else if (obj.name.toLowerCase().includes(searchInput.toLowerCase())) {
                             return obj;
                         }
-                    }).map((obj) => (<li key={obj.id}>{obj.name} <b>{obj.id}</b></li>)) }
+                    }).map((obj) => (<li onClick={() => _SetStationIdFromLookup(obj.id)} key={obj.id}>{obj.name} <b>{obj.id}</b></li>)) }
 
                     
                 </ul>

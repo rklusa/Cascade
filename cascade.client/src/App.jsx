@@ -24,7 +24,7 @@ function App() {
                 </label>
                 <button onClick={AddChart}> Add Chart</button> <br />
                 <button onClick={HandleLookup} > Station Lookup </button>
-                {lookupOpen ? <StationLookupComp /> : null}
+                {lookupOpen ? <StationLookupComp _SetStationIdFromLookup={SetStationIdFromLookup} /> : null}
             </nav>
             <div className="MainContainer">
                 <div className="ChartContainer">
@@ -43,6 +43,10 @@ function App() {
 
     function HandleLookup() {
         setLookUpOpen(!lookupOpen);
+    }
+
+    function SetStationIdFromLookup(id) {
+        setStationId(id);
     }
 
     function AddChart() {
