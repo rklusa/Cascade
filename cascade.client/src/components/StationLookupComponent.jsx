@@ -6,13 +6,13 @@ function StationLookupComp({ _SetStationIdFromLookup }) {
 
 
     return (
-        <div className="StationLookupDropDown">
+        <div className="StationLookupDropDown" data-testid="LookupContainer">
             <div>
                 <label> Station Lookup </label> <br />
-                <input type="text" placeholder="Search" value={searchInput} onChange={e => setSearchInput(e.target.value)}></input>
+                <input data-testid="SearchInput" type="text" placeholder="Search" value={searchInput} onChange={e => setSearchInput(e.target.value)}></input>
             </div>
             <div>
-                <ul>
+                <ul data-testid="ResultsContainer">
                     {data.filter((obj) => {
                         if (searchInput === "") {
                             return;

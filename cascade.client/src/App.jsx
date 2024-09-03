@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './styles/App.css';
 import RiverDataComp from './components/RiverDataComponent';
 import SummariesComp from './components/SummariesComponent';
-import StationLookupComp from './components/StationLookupComponentjsx';
+import StationLookupComp from './components/StationLookupComponent';
 
 
 function App() {
