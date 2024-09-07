@@ -4,7 +4,7 @@ import RiverDataComp from './components/RiverDataComponent';
 import SummariesComp from './components/SummariesComponent';
 import StationLookupComp from './components/StationLookupComponent';
 
-
+// TODO: MAKE IT SO USERS CANNOT ADD A CHART IF THE INPUT FIELD IS EMPTY!
 function App() {
     const [stationId, setStationId] = useState();
     const [lookupOpen, setLookUpOpen] = useState();
@@ -15,15 +15,15 @@ function App() {
     //const stations = ["02ED027", "02FF007", "02FE015"];
 
     return (
-        <div>
-            <nav className="nav">
-                <button onClick={HandleLookup} > Station Lookup </button>
+        <div data-testid="AppContainer" >
+            <nav className="nav" data-testid="NavContainer">
+                <button data-testid="LookupButton" onClick={HandleLookup} > Station Lookup </button>
                 {lookupOpen ? <StationLookupComp _SetStationIdFromLookup={SetStationIdFromLookup} /> : null}
                 <label>
                     Station #:
-                    <input value={stationId || ""} onChange={e => setStationId(e.target.value)} />
+                    <input data-testid="StationIdInput" value={stationId || ""} onChange={e => setStationId(e.target.value)} />
                 </label>
-                <button onClick={AddChart}> Add Chart</button> <br />
+                <button data-testid="AddChartButton" onClick={AddChart}> Add Chart</button> <br />
             </nav>
             <div className="MainContainer">
                 <div className="ChartContainer">
