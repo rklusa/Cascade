@@ -4,7 +4,6 @@ import RiverDataComp from './components/RiverDataComponent';
 import SummariesComp from './components/SummariesComponent';
 import StationLookupComp from './components/StationLookupComponent';
 
-// TODO: MAKE IT SO USERS CANNOT ADD A CHART IF THE INPUT FIELD IS EMPTY!
 function App() {
     const [stationId, setStationId] = useState();
     const [lookupOpen, setLookUpOpen] = useState();
@@ -49,10 +48,12 @@ function App() {
     }
 
     function AddChart() {
-        HandleLookup();
+        if (lookupOpen) {
+            HandleLookup();
+        }
+        console.log(stationId);
         const checkStationExist = charts.find(obj => obj._stationId == stationId);
-        if (!checkStationExist) {
-            console.log("this station doesnt already have a chart");
+        if (!checkStationExist && stationId) {
             const newChart = { id: Date.now(), _stationId: stationId }
             setCharts([...charts, newChart]);
         } 
