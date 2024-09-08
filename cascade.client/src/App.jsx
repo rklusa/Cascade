@@ -29,7 +29,7 @@ function App() {
                     
                     {charts.map(chart => (<RiverDataComp key={chart.id} _chart={chart} _stationId={stationId} _DeleteChart={DeleteChart} _AddSummary={AddSummary} />))}
                 </div>
-                <div className="SummaryContainer">
+                <div className="SummaryContainer" data-testid="SummariesContainer">
                     <label style={{fontWeight: "bold"}} > Summaries </label>
                     {summaries.map(sum => (<SummariesComp key={sum.id} _sum={sum} _stationName={sum._stationName} _stationId={sum._stationId} _currentValue={sum._currentValue} />))}
                 </div>

@@ -4,7 +4,7 @@ function SummariesComp({ _sum, _stationName, _stationId, _currentValue }) {
     const formattedValue = FormatValue(_currentValue);
 
     return (
-      <div className="SummariesComp">
+        <div className="SummariesComp" data-testid="SummaryComponent">
             <p>({_stationId}){_stationName} Level: <b>{formattedValue}</b> m</p>
       </div>
     );

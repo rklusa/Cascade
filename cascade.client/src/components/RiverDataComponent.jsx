@@ -1,6 +1,7 @@
 import ChartComp from './ChartComponent';
 import LoadingSpinner from './Loading';
 import { useEffect, useState } from 'react';
+import { populateRiverData, GetStationDetails } from './ApiController';
 
 
 function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
@@ -16,8 +17,8 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
             return;
         }
         console.log("making api calls");
-        populateRiverData(_stationId);
-        GetStationDetails(_stationId);
+        populateRiverData(_stationId, setData, setLastEntry, setLoading);
+        GetStationDetails(_stationId, setStationName);
         setStationId(_stationId);
     }, []);
 
@@ -35,69 +36,15 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
         }
         
         
-    }, [data, stationName]);
+    }, [data]);
 
     return (
-        <div className="ChartObj" data-testid="ChartContainer">
-            <label> {stationName} </label>
-            {loading ? <label></label> : <button className="DeleteButton" data-testid="DeleteButton" onClick={() => _DeleteChart(_chart.id)} > X </button>}
-            {loading ? <div className="LoadingSpinner" data-testid="Loading" ><LoadingSpinner /></div> : <div data-testid="Chart"> <ChartComp _data={data} /> </div>}
+        <div className="ChartObj" data-testid="ChartObjContainer">
+            {loading ? <div className="LoadingSpinner" data-testid="LoadingContainer"> <LoadingSpinner /> <label>Loading</label> </div> :
+                <div data-testid="Chart"> <label>{stationName}</label> <button className="DeleteButton" data-testid="DeleteButton" onClick={() => _DeleteChart(_chart.id)} > X </button> <ChartComp _data={data} /> </div>}
+            
         </div>
     );
-
-    async function populateRiverData(station) {
-
-        setLoading(true);
-
-        try {
-            const response = await fetch(`GetRiverData?station=${station}`)
-
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            const data = await response.json();
-
-            if (data.length == 0) {
-                console.log("invalid station id");
-            }
-            else {
-                setData(data);
-                setLastEntry(data[data.length - 1].value);
-            }
-
-        } catch (e) {
-            console.log(e);
-        }
-
-        setLoading(false);
-
-    }
-
-    async function GetStationDetails(station) {
-
-        try {
-            const response = await fetch(`GetStationName?station=${station}`);
-
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-
-            const stationName = await response.text();
-            let name = "";
-
-            if (stationName == "") {
-                name = "Invalid Station Name";
-            } else {
-                name = stationName;
-            }
-
-            setStationName(name);
-
-        } catch (e) {
-            console.log(e);
-        }
-
-    }
 }
 
 export default RiverDataComp;
