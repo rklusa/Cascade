@@ -1,6 +1,4 @@
-export async function populateRiverData(station, _setData, _setLastEntry, _setLoading) {
-
-    _setLoading(true);
+export async function populateRiverData(station) {
 
     try {
         const response = await fetch(`GetRiverData?station=${station}`)
@@ -12,22 +10,19 @@ export async function populateRiverData(station, _setData, _setLastEntry, _setLo
 
         if (data.length == 0) {
             console.log("invalid station id");
+            return;
         }
         else {
-            _setData(data);
-            const lastEntry = data[data.length - 1].value;
-            _setLastEntry(lastEntry);
+
+            return data;
         }
 
     } catch (e) {
         console.log(e);
     }
-
-    _setLoading(false);
-
 }
 
-export async function GetStationDetails(station, _setStationName) {
+export async function GetStationDetails(station) {
 
     try {
         const response = await fetch(`GetStationName?station=${station}`);
@@ -39,10 +34,12 @@ export async function GetStationDetails(station, _setStationName) {
         const stationName = await response.text();
         let name = stationName;
         if (stationName == "") {
-            _setStationName("Invalid Station Name");
+            name = 'Invalid Station Name';
         } else {
-            _setStationName(stationName);
+            name = stationName;
         }
+
+        return name;
 
     } catch (e) {
         console.log(e);
