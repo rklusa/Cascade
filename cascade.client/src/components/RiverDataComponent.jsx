@@ -16,16 +16,16 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
         if (_stationId === null || _stationId === "") {
             return;
         }
-        fetchCaller(_stationId);
-        setStationId(_stationId);
+        else {
+            fetchCaller(_stationId);
+            setStationId(_stationId);
+        }
+
     }, []);
 
     // summary hook
     useEffect(() => {
         if (data === undefined || data.length == 0) {
-            return;
-        }
-        else if (stationName === undefined || stationName == "") {
             return;
         }
         else {

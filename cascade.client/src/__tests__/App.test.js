@@ -101,8 +101,6 @@ describe('App', () => {
     it('will not add a chart if Add Chart is pressed with an empty station id input', () => {
         render(<App />);
         const button = screen.getByTestId('AddChartButton');
-        //const input = screen.getByTestId('StationIdInput');
-        //fireEvent.change(input, { target: { value: '02FE015' } });
         fireEvent.click(button);
         expect(screen.queryByTestId('ChartObjContainer')).not.toBeInTheDocument();
     })

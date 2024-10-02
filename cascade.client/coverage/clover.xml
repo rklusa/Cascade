@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727805543440" clover="3.2.0">
-  <project timestamp="1727805543440" name="All files">
-    <metrics statements="84" coveredstatements="67" conditionals="38" coveredconditionals="28" methods="29" coveredmethods="28" elements="151" coveredelements="123" complexity="0" loc="84" ncloc="84" packages="3" files="8" classes="8"/>
+<coverage generated="1727894776907" clover="3.2.0">
+  <project timestamp="1727894776907" name="All files">
+    <metrics statements="82" coveredstatements="66" conditionals="34" coveredconditionals="25" methods="29" coveredmethods="28" elements="145" coveredelements="119" complexity="0" loc="82" ncloc="82" packages="3" files="8" classes="8"/>
     <package name="cascade.client">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="csstub.js" path="C:\Users\User\source\repos\Cascade\cascade.client\csstub.js">
@@ -37,7 +37,7 @@
       </file>
     </package>
     <package name="cascade.client.src.components">
-      <metrics statements="62" coveredstatements="45" conditionals="28" coveredconditionals="18" methods="17" coveredmethods="17"/>
+      <metrics statements="60" coveredstatements="44" conditionals="24" coveredconditionals="15" methods="17" coveredmethods="17"/>
       <file name="ApiController.jsx" path="C:\Users\User\source\repos\Cascade\cascade.client\src\components\ApiController.jsx">
         <metrics statements="21" coveredstatements="6" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
@@ -72,7 +72,7 @@
         <line num="4" count="7" type="stmt"/>
       </file>
       <file name="RiverDataComponent.jsx" path="C:\Users\User\source\repos\Cascade\cascade.client\src\components\RiverDataComponent.jsx">
-        <metrics statements="27" coveredstatements="25" conditionals="16" coveredconditionals="14" methods="5" coveredmethods="5"/>
+        <metrics statements="25" coveredstatements="24" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
         <line num="8" count="18" type="stmt"/>
         <line num="9" count="18" type="stmt"/>
         <line num="10" count="18" type="stmt"/>
@@ -81,13 +81,11 @@
         <line num="15" count="18" type="stmt"/>
         <line num="16" count="7" type="cond" truecount="3" falsecount="1"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
         <line num="20" count="7" type="stmt"/>
-        <line num="24" count="18" type="stmt"/>
-        <line num="25" count="9" type="cond" truecount="4" falsecount="0"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="28" count="2" type="cond" truecount="3" falsecount="1"/>
-        <line num="29" count="0" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="27" count="18" type="stmt"/>
+        <line num="28" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="7" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="39" count="18" type="stmt"/>
