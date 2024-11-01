@@ -1,7 +1,7 @@
 
 <br />
 <div align="center">
-  <img src="CascadeLogoDark.png" width="500" height="500">
+  <img src="ReadmeImg/CascadeLogoDark.png" width="500" height="500">
   <h3> Allowing River Users to make more informed decisions. </h3>
 </div>
 <br />
