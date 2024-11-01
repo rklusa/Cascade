@@ -1,10 +1,13 @@
 Logo goes here
 
-Allowing fisherman and kayakers to make more informed decisions.
 
-Table of Contents goes here
+
 
 # Cascade
+## Allowing fisherman and kayakers to make more informed decisions.
+
+Table of Contents goes here
+# About
 
 *img of project in action*
 
