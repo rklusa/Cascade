@@ -1,12 +1,8 @@
-Logo goes here
-
 
 <br />
 <div align="center">
-  <h3 align="center">Cascade</h3>
-  <p>
-    Allowing River Users to make more informed decisions.
-  </p>
+  <img src="CascadeLogoDark.png" width="500" height="500">
+  <h3> Allowing River Users to make more informed decisions. </h3>
 </div>
 <br />
 
