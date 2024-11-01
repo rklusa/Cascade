@@ -76,3 +76,16 @@
 .SummariesComp {
     text-align: left;
 }
+
+.foot {
+    display: inline-flex;
+    flex-direction: row;
+    min-width: 100vw;
+    position: sticky;
+    align-items: center;
+    background-color: #333;
+    color: #EEEEEE;
+    gap: 10px;
+    bottom: 0;
+    z-index: 1;
+}

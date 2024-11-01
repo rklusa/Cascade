@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from './assets/logo.svg';
 import './styles/App.css';
 import RiverDataComp from './components/RiverDataComponent';
 import SummariesComp from './components/SummariesComponent';
@@ -16,6 +17,7 @@ function App() {
     return (
         <div data-testid="AppContainer" >
             <nav className="nav" data-testid="NavContainer">
+                <img src={logo} style={{height: 50, width:50}} />
                 <button data-testid="LookupButton" onClick={HandleLookup} > Station Lookup </button>
                 {lookupOpen ? <StationLookupComp _SetStationIdFromLookup={SetStationIdFromLookup} /> : null}
                 <label>
@@ -34,7 +36,9 @@ function App() {
                     {summaries.map(sum => (<SummariesComp key={sum.id} _sum={sum} _stationName={sum._stationName} _stationId={sum._stationId} _currentValue={sum._currentValue} />))}
                 </div>
             </div>
-            
+            <footer className="foot">
+            <label>Cascade HydroData 2024</label>
+            </footer>
         </div>
 
     );

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.Server", "Cascade.Server\Cascade.Server.csproj", "{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cascade.Server", "Cascade.Server\Cascade.Server.csproj", "{D31D5A00-3CEE-4D25-A24D-332EC2DCE43D}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cascade.client", "cascade.client\cascade.client.esproj", "{433075F0-948F-43B1-9CF4-4B9A77AD7424}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadmeImg", "ReadmeImg", "{228B23F3-087B-4083-8B50-9EE0F8B14ACC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
