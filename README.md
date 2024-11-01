@@ -1,10 +1,15 @@
 Logo goes here
 
 
+<br />
+<div align="center">
+  <h3 align="center">Cascade</h3>
+  <p>
+    Allowing River Users to make more informed decisions.
+  </p>
+</div>
+<br />
 
-
-# Cascade
-## Allowing fisherman and kayakers to make more informed decisions.
 
 Table of Contents goes here
 # About
