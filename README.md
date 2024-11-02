@@ -6,8 +6,27 @@
 </div>
 <br />
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#About">About</a>
+    </li>
+    <li>
+      <a href="#Roadmap">Roadmap</a>
+    </li>
+    <li>
+      <a href="#Usage">Usage</a>
+    </li>
+    <li>
+      <a href="#Acknowledgments">Acknowledgments</a>
+    </li>
+    <li>
+      <a href="#License">License</a>
+    </li>
+  </ol>
+</details>
 
-Table of Contents goes here
 # About
 
 *img of project in action*
