@@ -47,7 +47,7 @@ Cascade was built as a learning project to practice react and provide myself and
 *uml diagram goes here*
 
 ## Testing
-*test coverage goes here*
+![Test Results](https://github.com/rklusa/Cascade/blob/master/ReadmeImg/CascadeTesting.PNG)
 
 # Acknowledgments
 [Environment Canada](https://wateroffice.ec.gc.ca/mainmenu/real_time_data_index_e.html)
