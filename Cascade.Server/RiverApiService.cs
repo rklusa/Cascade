@@ -14,7 +14,6 @@ namespace Cascade.Server
         // notawasaga river at edenvale 02ED027
         // bayfield river at varna 02FF007
         // maitland river at ben miller 02FE015
-        private static string key = ApiKeys.key2;
         private static string startDate = GetStartDate();
         private static string endDate = GetEndDate();
         private static string type = "history";
@@ -24,8 +23,8 @@ namespace Cascade.Server
 
         public static string FetchRiverInfo(string station)
         {
-            var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
-            var request = new RestRequest($"/station/{station}?key={key}");
+            var client = new RestClient("https://api.weather.gc.ca/collections/hydrometric-stations");
+            var request = new RestRequest($"/items?f=json&lang=en-CA&limit=10&additionalProp1=%7B%7D&skipGeometry=false&offset=0&STATION_NUMBER={station}");
             var response = client.ExecuteAsync(request);
             
             string cleanName = string.Empty;
@@ -35,7 +34,7 @@ namespace Cascade.Server
                 string rawResponse = response.Result.Content;
 
                 dynamic x = JObject.Parse(rawResponse);
-                string stationName = x["message"]["name"];
+                string stationName = x["features"][0]["properties"]["STATION_NAME"];
 
                 cleanName = string.Join(" ", stationName.Split().SkipWhile(word => word != word.ToUpper()).TakeWhile(word => word == word.ToUpper()));
 
