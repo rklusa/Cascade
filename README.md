@@ -1,17 +1,32 @@
-Logo goes here
-
 
 <br />
 <div align="center">
-  <h3 align="center">Cascade</h3>
-  <p>
-    Allowing River Users to make more informed decisions.
-  </p>
+  <img src="ReadmeImg/CascadeLogoDark.png" width="500" height="500">
+  <h3> Allowing River Users to make more informed decisions. </h3>
 </div>
 <br />
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#About">About</a>
+    </li>
+    <li>
+      <a href="#Roadmap">Roadmap</a>
+    </li>
+    <li>
+      <a href="#Usage">Usage</a>
+    </li>
+    <li>
+      <a href="#Acknowledgments">Acknowledgments</a>
+    </li>
+    <li>
+      <a href="#License">License</a>
+    </li>
+  </ol>
+</details>
 
-Table of Contents goes here
 # About
 
 *img of project in action*
@@ -32,7 +47,7 @@ Cascade was built as a learning project to practice react and provide myself and
 *uml diagram goes here*
 
 ## Testing
-*test coverage goes here*
+![Test Results](https://github.com/rklusa/Cascade/blob/master/ReadmeImg/CascadeTesting.PNG)
 
 # Acknowledgments
 [Environment Canada](https://wateroffice.ec.gc.ca/mainmenu/real_time_data_index_e.html)
