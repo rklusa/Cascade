@@ -42,7 +42,11 @@ Cascade was built as a learning project to practice react and provide myself and
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 # Roadmap
-
+## Features
+- [x] All Hydrometric stations from canada Hydro data added.
+- [x] Search from all stations instead of manual station # Entry.
+- [ ] Set manual start and end dates.
+      
 # Usage
 *uml diagram goes here*
 
@@ -52,8 +56,7 @@ Cascade was built as a learning project to practice react and provide myself and
 # Acknowledgments
 [Environment Canada](https://wateroffice.ec.gc.ca/mainmenu/real_time_data_index_e.html)
 
-[API](https://scrap2api.web.app/index.html)
-
 [ReCharts](https://recharts.org/en-US/)
 
 # License
+[MIT License](https://github.com/rklusa/Cascade/blob/master/LICENSE)
