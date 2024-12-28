@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727894776907" clover="3.2.0">
-  <project timestamp="1727894776907" name="All files">
-    <metrics statements="82" coveredstatements="66" conditionals="34" coveredconditionals="25" methods="29" coveredmethods="28" elements="145" coveredelements="119" complexity="0" loc="82" ncloc="82" packages="3" files="8" classes="8"/>
+<coverage generated="1731190459943" clover="3.2.0">
+  <project timestamp="1731190459943" name="All files">
+    <metrics statements="85" coveredstatements="68" conditionals="34" coveredconditionals="25" methods="30" coveredmethods="28" elements="149" coveredelements="121" complexity="0" loc="85" ncloc="85" packages="4" files="9" classes="9"/>
     <package name="cascade.client">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="csstub.js" path="C:\Users\User\source\repos\Cascade\cascade.client\csstub.js">
@@ -13,27 +13,36 @@
       <metrics statements="21" coveredstatements="21" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="11"/>
       <file name="App.jsx" path="C:\Users\User\source\repos\Cascade\cascade.client\src\App.jsx">
         <metrics statements="21" coveredstatements="21" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="11"/>
-        <line num="8" count="28" type="stmt"/>
-        <line num="9" count="27" type="stmt"/>
+        <line num="9" count="28" type="stmt"/>
         <line num="10" count="27" type="stmt"/>
         <line num="11" count="27" type="stmt"/>
-        <line num="16" count="27" type="stmt"/>
-        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="30" count="6" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="43" count="5" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="51" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="54" count="7" type="stmt"/>
-        <line num="55" count="7" type="stmt"/>
-        <line num="56" count="7" type="cond" truecount="4" falsecount="0"/>
-        <line num="57" count="5" type="stmt"/>
-        <line num="58" count="5" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
-        <line num="69" count="2" type="stmt"/>
+        <line num="12" count="27" type="stmt"/>
+        <line num="17" count="27" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="58" count="7" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="60" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="62" count="5" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="cascade.client.src.assets">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="logo.svg" path="C:\Users\User\source\repos\Cascade\cascade.client\src\assets\logo.svg">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
       </file>
     </package>
     <package name="cascade.client.src.components">

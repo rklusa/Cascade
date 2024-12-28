@@ -18,7 +18,7 @@ function ChartComp({ _data }) {
     return (
         <LineChart width={500} height={300} data={_data} >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" padding={{ left: 10, right: 10 }} />
+            <XAxis dataKey="datetime" padding={{ left: 10, right: 10 }} />
             <YAxis type="number" tickFormatter={(value) =>
                 new Intl.NumberFormat("en-US", {
                     notation: "compact",
@@ -29,7 +29,7 @@ function ChartComp({ _data }) {
             <Legend />
             <Line
                 type="monotone"
-                dataKey="value"
+                dataKey="level"
                 stroke="#2693ff"
                 activeDot={{ r: 2 }}
             />

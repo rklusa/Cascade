@@ -53,7 +53,7 @@ function RiverDataComp({_chart, _stationId, _DeleteChart, _AddSummary }) {
         setStationName(nameResult);
 
         if (dataResult != undefined) {
-            const lastEntry = dataResult[dataResult.length - 1].value;
+            const lastEntry = dataResult[dataResult.length - 1].level;
             setLastEntry(lastEntry);
         }
         

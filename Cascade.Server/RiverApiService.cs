@@ -45,17 +45,24 @@ namespace Cascade.Server
         }
         public static void FetchRiverData(string station)
         {
-            var client = new RestClient("https://vps267042.vps.ovh.ca/scrapi");
-            var request = new RestRequest($"/station/{station}/primarylevel/?startDate={startDate}&endDate={endDate}&resultType={type}&key={key}");
+            var client = new RestClient("https://api.weather.gc.ca/collections/hydrometric-realtime");
+            var request = new RestRequest($"/items?f=json&lang=en-CA&limit=10000&additionalProp1=%7B%7D&skipGeometry=true&offset=0&datetime={startDate}%2F{endDate}&STATION_NUMBER={station}");
             var response = client.ExecuteAsync(request);
 
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 string rawResponse = response.Result.Content;
 
-                var x = JsonConvert.DeserializeObject<JObject>(rawResponse);
+                JObject datesData = JObject.Parse(rawResponse);
 
-                List<RiverData> returnedList = x.Value<JObject>("message").Value<JArray>("history").ToObject<List<RiverData>>();
+                List<JToken> rawReturnedList = datesData["features"].Children().ToList();
+                List<RiverData> returnedList = new List<RiverData>();
+
+                foreach (JToken token in rawReturnedList)
+                {
+                    RiverData dataObj = token.Value<JToken>("properties").ToObject<RiverData>();
+                    returnedList.Add(dataObj);
+                }
 
                 finalData = FilterDates(returnedList);
             }
@@ -68,7 +75,7 @@ namespace Cascade.Server
             foreach (var obj in data)
             {
                 //"2024-06-30 00:00:00" format of date string coming in from api
-                string min = obj.date.Split(':')[1];// split the string to get the minutes section of time
+                string min = obj.DATETIME.Split(':')[1];// split the string to get the minutes section of time
                 
                 if (Convert.ToInt32(min) == 0)// only grab 1 entry for each day
                 {
@@ -81,13 +88,13 @@ namespace Cascade.Server
 
         public static string GetStartDate()
         {
-            string date = DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd");
+            string date = DateTime.Now.AddDays(-2).ToString("yyyy-MM-dd");
             return date;
         }
 
         public static string GetEndDate()
         {
-            string date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
             return date;
         }
 
