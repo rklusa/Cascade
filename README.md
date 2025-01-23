@@ -29,7 +29,7 @@
 
 # About
 
-*img of project in action*
+![demo](https://github.com/rklusa/Cascade/blob/master/ReadmeImg/Cascade.gif)
 
 A light weight single page app designed to simplify the viewing of hydrometric data in canada.
 
@@ -46,6 +46,7 @@ Cascade was built as a learning project to practice react and provide myself and
 - [x] All Hydrometric stations from canada Hydro data added.
 - [x] Search from all stations instead of manual station # Entry.
 - [ ] Set manual start and end dates.
+- [ ] Full Test coverage.
       
 # Usage
 *uml diagram goes here*
