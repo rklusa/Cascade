@@ -49,7 +49,6 @@ Cascade was built as a learning project to practice react and provide myself and
 - [ ] Full Test coverage.
       
 # Usage
-*uml diagram goes here*
 
 ## Testing
 ![Test Results](https://github.com/rklusa/Cascade/blob/master/ReadmeImg/CascadeTesting.PNG)
